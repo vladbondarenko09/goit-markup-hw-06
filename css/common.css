@@ -13,10 +13,21 @@ ul {
   list-style: none;
 }
 .container {
-  width: 1158px;
+  width: 100%;
+  max-width: 320px;
+  padding: 0 16px;
   margin: 0 auto;
-  padding: 0 15px;
-  box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+  }
 }
 .sr-only {
   position: absolute;
