@@ -1,6 +1,7 @@
+/* BACKDROP */
+
 .backdrop {
   position: fixed;
-  background-color: rgba(46, 47, 66, 0.4);
   top: 0;
   left: 0;
   width: 100%;
@@ -9,6 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 16px;
+  background-color: rgba(46, 47, 66, 0.4);
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -23,39 +26,43 @@
   visibility: visible;
 }
 
+/* MOBILE MODAL */
+
 .modal {
   position: relative;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 288px;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  padding: 72px 16px 24px;
+  border-radius: 4px;
+  background-color: #fcfcfc;
   box-shadow:
     0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
-  background: #fcfcfc;
-  border-radius: 4px;
-  padding: 72px 24px 24px;
-  width: 408px;
-  height: 582px;
 }
 
 .modal-close-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: 24px;
   right: 24px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 24px;
   height: 24px;
   padding: 0;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 50%;
   background-color: #e7e9fc;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .modal-close-icon {
   fill: #2e2f42;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -65,25 +72,32 @@
 .modal-close-btn:focus {
   background-color: #404bbf;
 }
-.modal-close-btn:hover .modal-close-icon {
-  fill: #fff;
-}
+
+.modal-close-btn:hover .modal-close-icon,
 .modal-close-btn:focus .modal-close-icon {
-  fill: #fff;
+  fill: #ffffff;
 }
+
 .modal-slogan {
+  margin-bottom: 16px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
   color: #2e2f42;
-  margin-bottom: 16px;
+}
+
+/* FORM */
+
+.review-form {
+  width: 100%;
 }
 
 .review-form-field-wrapper {
   margin-top: 8px;
 }
+
 .review-form-field-label {
   display: block;
   margin-bottom: 4px;
@@ -93,22 +107,27 @@
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
+
+.review-form-input-wrapper {
+  position: relative;
+}
+
 .review-form-field {
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  background-color: transparent;
-  border-radius: 4px;
-  padding: 8px 38px;
-  width: 360px;
-  height: 100%;
-  max-width: 360px;
+  width: 100%;
+  height: 40px;
   min-height: 40px;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 8px 38px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .review-form-field:focus {
   border-color: #4d5ae5;
   outline: none;
@@ -116,10 +135,6 @@
 
 .review-form-field:focus + .review-form-field-icon {
   fill: #4d5ae5;
-}
-
-.review-form-input-wrapper {
-  position: relative;
 }
 
 .review-form-field-icon {
@@ -132,19 +147,19 @@
 }
 
 .review-form-message {
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
-  padding: 8px 16px;
   width: 100%;
   height: 120px;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
   background-color: transparent;
   resize: none;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin-bottom: 16px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16667;
   letter-spacing: 0.04em;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .review-form-message::placeholder {
@@ -155,43 +170,53 @@
   border-color: #4d5ae5;
   outline: none;
 }
+
+/* CHECKBOX */
+
 .review-form-policy-wrapper {
   margin-bottom: 24px;
 }
+
+.review-form-policy-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-form-custom-checkbox {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .check-icon {
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   fill: #f4f4fd;
   opacity: 0;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.review-form-custom-checkbox {
-  width: 16px;
-  height: 16px;
-  border-radius: 2px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  position: relative;
-  display: block;
-  transition:
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 .review-form-policy-checkbox:checked
   + .review-form-policy-label
   .review-form-custom-checkbox {
   background-color: #404bbf;
   border: 1px solid #404bbf;
 }
+
 .review-form-policy-checkbox:checked + .review-form-policy-label .check-icon {
   opacity: 1;
 }
-.review-form-policy-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+
 .review-form-policy-label-text {
   font-weight: 400;
   font-size: 12px;
@@ -199,34 +224,44 @@
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
+
 .privacy-policy-link {
   text-decoration: underline;
   color: #4d5ae5;
 }
 
+/* SUBMIT BUTTON */
+
 .review-form-submit-btn {
   display: block;
-  justify-content: center;
-  text-align: center;
-  flex-direction: row;
-  margin: 0 auto;
-  border-radius: 4px;
-  padding: 16px 32px;
   width: 169px;
   height: 56px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 4px;
   background-color: #4d5ae5;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  border: none;
-  color: #fff;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #ffffff;
+  text-align: center;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .review-form-submit-btn:hover,
 .review-form-submit-btn:focus {
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background-color: #404bbf;
+}
+
+/* TABLET AND DESKTOP — 768px */
+
+@media screen and (min-width: 768px) {
+  .modal {
+    max-width: 408px;
+    padding: 72px 24px 24px;
+  }
 }

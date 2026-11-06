@@ -9,9 +9,11 @@ body {
   color: #434455;
   background-color: #fff;
 }
+
 ul {
   list-style: none;
 }
+
 .container {
   width: 100%;
   max-width: 320px;
@@ -24,11 +26,15 @@ ul {
     max-width: 768px;
   }
 }
+
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
+
 .sr-only {
   position: absolute;
   white-space: nowrap;
@@ -41,6 +47,7 @@ ul {
   clip-path: inset(100%);
   margin: -1px;
 }
+
 h1,
 h2,
 h3,
@@ -52,8 +59,15 @@ p {
 }
 
 .section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media screen and (min-width: 1158px) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 ul,
@@ -61,6 +75,7 @@ ol {
   padding-left: 0;
   margin: 0;
 }
+
 img {
   display: block;
 }
