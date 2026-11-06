@@ -79,7 +79,7 @@
 
 .footer-subscribe {
   width: 100%;
-  margin-left: auto;
+  margin-left: 0;
 }
 
 .footer-subscribe-title {
@@ -159,7 +159,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: baseline;
-    justify-content: center;
+    justify-content: flex-start;
     column-gap: 24px;
     row-gap: 72px;
     max-width: 584px;
@@ -177,8 +177,13 @@
     text-align: left;
   }
 
+  .footer-social-list {
+    justify-content: flex-start;
+  }
+
   .footer-subscribe {
-    width: auto;
+    align-self: flex-start;
+    margin-left: 0;
   }
 
   .footer-subscribe-title {
@@ -187,6 +192,7 @@
 
   .footer-subscribe-form {
     flex-direction: row;
+    align-items: center;
     gap: 24px;
   }
 
@@ -195,8 +201,6 @@
   }
 }
 
-/* DESKTOP — от 1158px */
-
 @media screen and (min-width: 1158px) {
   .footer {
     padding: 100px 0;
@@ -204,6 +208,7 @@
 
   .footer-container {
     max-width: 1158px;
+    flex-direction: row;
     flex-wrap: nowrap;
     align-items: baseline;
     justify-content: flex-start;
@@ -222,6 +227,7 @@
   }
 
   .footer-subscribe {
+    width: auto;
     margin-left: auto;
   }
 }
